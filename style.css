@@ -38,8 +38,44 @@
   display:inline-block;
   border-radius: 10%;
   border-color: rgb(228, 68, 215);
-
 }
+
+#mover-baixo {
+  width: 100px;
+  height: 50px;
+  background-color: rgb(150, 116, 230);
+  display:inline-block;
+  border-radius: 10%;
+  border-color: rgb(235, 95, 218);
+}
+#mover-cima {
+  width: 100px;
+  height: 50px;
+  background-color: rgb(252, 148, 30);
+  display:inline-block;
+  border-radius: 10%;
+  border-color: rgb(235, 95, 218);
+}
+
+#salvar-tarefas {
+    width: 100px;
+    height: 50px;
+    background-color: rgb(124, 230, 225);
+    display:inline-block;
+    border-radius: 10%;
+    border-color: rgb(228, 68, 215);
+  
+  }
+
+#remover-selecionado {
+    width: 100px;
+    height: 50px;
+    background-color: rgb(196, 124, 230);
+    display:inline-block;
+    border-radius: 10%;
+    border-color: rgb(228, 68, 215);
+  
+  }
 
 #texto-tarefa {
   display:inline-block;

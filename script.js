@@ -7,6 +7,16 @@ button.innerText = 'Adicionar';
 deleteList.innerText = 'Apaga tudo';
 deleteCompleted.innerText = 'Concluídos';
 
+// Bônus:
+
+const buttonSave = document.querySelector('#salvar-tarefas');
+buttonSave.innerText = 'Salvar';
+const buttonUp = document.querySelector('#mover-cima');
+const buttonDown = document.querySelector('#mover-baixo');
+buttonUp.innerText = 'Cima';
+buttonDown.innerText = 'Baixo';
+const buttonDeleteSelected = document.querySelector('#remover-selecionado');
+
 function inputLength() {
   return input.value.length;
 }
@@ -33,6 +43,33 @@ function createList() {
     }
   }
   deleteCompleted.addEventListener('click', deleteEventCompleted);
+
+  function saveList() {
+    localStorage.setItem(li, li);
+  }
+  buttonSave.addEventListener('click', saveList);
+
+  /* function moveUp() {
+      let liChanged = document.querySelector('change');
+     liChanged.insertBefore(liChanged.prev());
+        li
+      }
+
+  function moveDown() {
+    for (let i = 0; i < li.length; i += 1) {
+      if (li.classList === ('change')) {
+        li[i] + 1;
+      } */
+
+/*  buttonUp.addEventListener('click', moveUp);
+  buttonDown.addEventListener('click', moveDown); */
+
+  function deleteSelected() {
+    if (li.className === ('change')) {
+      li.remove('change');
+    }
+  }
+  buttonDeleteSelected.addEventListener('click', deleteSelected);
 }
 
 function addClick() {
