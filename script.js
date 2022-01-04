@@ -69,7 +69,7 @@ window.onload = function openList() {
 };
 
 // move up and down:
-
+// Referência: https://www.codegrepper.com/code-examples/javascript/javascript+move+list+items+up+and+down
 /* function moveUp() {
   const liArray = document.querySelectorAll('li');
   for (let i = 0; i < liArray.length; i += 1) {
