@@ -27,8 +27,12 @@ function createList() {
   ol.appendChild(li);
   input.value = '';
 
-  function changeColor() {
-    li.classList.toggle('change');
+  // __
+  function changeColor(event) {
+    const liArray = document.querySelectorAll('li');
+    for (let i = 0; i < liArray.length; i += 1) {
+      liArray[i].classList.remove('change');
+    } event.target.classList.add('change');
   }
   li.addEventListener('click', changeColor);
 
@@ -38,31 +42,11 @@ function createList() {
   li.addEventListener('dblclick', lineComplete);
 
   function deleteEventCompleted() {
-    if (li.className === ('completed')) {
+    if (li.classList.contains('completed')) {
       li.remove('completed');
     }
   }
   deleteCompleted.addEventListener('click', deleteEventCompleted);
-
-  function saveList() {
-    localStorage.setItem(li, li);
-  }
-  buttonSave.addEventListener('click', saveList);
-
-  /* function moveUp() {
-      let liChanged = document.querySelector('change');
-     liChanged.insertBefore(liChanged.prev());
-        li
-      }
-
-  function moveDown() {
-    for (let i = 0; i < li.length; i += 1) {
-      if (li.classList === ('change')) {
-        li[i] + 1;
-      } */
-
-/*  buttonUp.addEventListener('click', moveUp);
-  buttonDown.addEventListener('click', moveDown); */
 
   function deleteSelected() {
     if (li.className === ('change')) {
@@ -72,6 +56,43 @@ function createList() {
   buttonDeleteSelected.addEventListener('click', deleteSelected);
 }
 
+// Salvar:
+
+function saveList() {
+  const saved = ol.innerHTML;
+  localStorage.setItem('li', saved);
+}
+buttonSave.addEventListener('click', saveList);
+
+window.onload = function openList() {
+  ol.innerHTML = localStorage.getItem('li');
+};
+
+// move up and down:
+
+/* function moveUp() {
+  const liArray = document.querySelectorAll('li');
+  for (let i = 0; i < liArray.length; i += 1) {
+    const teste = liArray[i].classList.contains('change');
+  if (teste.previousElementSibling) {
+    teste.parentNode.insertBefore(teste, teste.previousElementSibling);
+  }
+}
+}
+function moveDown() {
+
+    for (let i = 0; i < ol.children.length; i += 1) {
+      const teste = ol.children.classList === ('change');
+    if (teste[i].nextElementSibling) {
+      teste[i].parentNode.insertBefore(teste[i].nextElementSibling, teste[i]);
+    }
+  }
+}
+
+buttonUp.addEventListener('click', moveUp);
+buttonDown.addEventListener('click', moveDown); */
+
+//
 function addClick() {
   if (inputLength() > 0) {
     createList();
